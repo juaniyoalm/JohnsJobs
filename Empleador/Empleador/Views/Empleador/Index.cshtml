@@ -1,0 +1,260 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model Core.Empleador.Empleador
+
+<!-- Scripts-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.0/angular-locale_es-es.min.js"></script>
+
+
+<script src="~/Scripts propios/empleadorController.js"></script>
+
+
+<link href="~/Content/MyCss.css" rel="stylesheet">
+
+<div ng-app="app" class="container">
+    <div ng-controller="EmpleadorController" data-ng-init="obtenerDatosEmpleador()" class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img data-ng-src="data:image/jpg;base64,{{empLoad.ImagenB64}}" data-err-src="images/png/avatar.png" class="img-responsive" />
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{empLoad.Nombre}} {{empLoad.Apellido1}}
+                    </div>
+                    <div class="profile-usertitle-job">
+                        Empleador
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+                <div class="profile-userbuttons">
+                    <button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button>
+                </div>
+                <!-- END SIDEBAR BUTTONS -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li ng-class="{'active' : section==1}">
+                            <a ng-click="mostrarMiPerfil()" ng-init="section = 1">
+                                <i class=" glyphicon glyphicon-home">
+                                </i>
+                                Mis Datos Personales
+                            </a>
+                        </li>
+                        <li ng-class="{'active' : bussiness==1}">
+                            <a ng-click="mostrarEmpresa()" ng-init="bussiness = 0">
+                                <i class=" glyphicon glyphicon-user">
+                                </i>
+                                Mi Perfil
+                            </a>
+                        </li>
+                        <li ng-class="{'active' : ofertas==1}">
+                            <a ng-click="mostrarOfertas()" ng-init="ofertas = 0">
+                                <i class=" glyphicon glyphicon-ok">
+                                </i>
+                                Mis Ofertas
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content" name="section" ng-show="section==1">
+                <label class="labelLetter">Nombre: {{empLoad.Nombre}}</label><br />
+                <label class="labelLetter">Apellidos: {{empLoad.Apellido1}} {{empLoad.Apellido2}}</label><br />
+            </div>
+            <div class="bussiness-content" name="bussiness" ng-show="bussiness==1">
+                <label class="labelLetter">Nombre de Empresa: {{empLoad.NombreEmpresa}} </label><br />
+                <label class="labelLetter">Direccion: {{empLoad.Direccion}} </label><br />
+                <label class="labelLetter">Teléfono: {{empLoad.Telefono}} </label><br />
+                <label class="labelLetter">Email: {{empLoad.Email}} </label><br />
+                <label class="labelLetter">Tipo de industria: {{empLoad.TipoIndustriaNombre}} </label><br />
+                <label class="labelLetter">Número de empleados: {{empLoad.NumeroEmpleados}} </label><br />
+            </div>
+            <div class="container" name="ofertas" ng-show="ofertas==1">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalPage">
+                    Nueva Oferta
+                </button>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Nº Vacantes</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                            <th>Ver Oferta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="oferta in listOfertas">
+                            <td style="text-align: center;">{{oferta.Titulo}}</td>
+                            <td style="text-align: center;">{{oferta.NumeroVacantes}}</td>
+                            <td style="text-align: center;">{{oferta.FechaLanzamientoS}}</td>
+                            <td style="text-align: center;">{{oferta.FechaFinS}}</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalPageOferta" ng-click="verOferta(oferta)"> <span class="glyphicon glyphicon-eye-open"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- MODAL VER OFERTA -->
+                <div class="modal fade" id="modalPageOferta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document" style="width: 55em;">
+                        <div class="modal-content">
+                            <div class="modal-header plus">
+                                <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 18px;">{{ofer.Titulo}}</h5>
+                                <button type="button" class="close ver" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group plus">
+                                            <b>Título:</b><br />
+                                            <label class="labelOferta" name="tituloL" id="tituloL">{{ofer.Titulo}}</label>
+                                        </div>
+
+                                        <div class="form-group plus">
+                                            <b>Fecha Fin:</b> <br />
+                                            <label class="labelOferta" name="fechafinL" id="fechafinL" />{{ofer.FechaFinS}}</label>
+                                        </div>
+
+                                        <div class="form-group plus">
+                                            <b>Observaciones:</b><br />
+                                            <label class="labelOferta" name="observL" id="observL" />{{ofer.Observaciones}}</label>
+                                        </div>
+
+                                        <div class="form-group plus">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <b>Nº vacantes:</b><br />
+                                                    <label class="labelOferta" name="vacantesL" id="vacantesL" />{{ofer.NumeroVacantes}}</label>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <b>Sueldo:</b><br />
+                                                    <label class="labelOferta" name="precioL" id="precioL" />{{ofer.Sueldo}}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group plus">
+                                            <b>Descripción:</b><br />
+                                            <label class="labelOferta" name="descripL" id="descripL">{{ofer.Descripcion}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer form-group">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
+                                            <th>Teléfono</th>
+                                            <th>Estudios</th>
+                                            <th>Exp.Laboral</th>
+                                            <th>CV</th>
+                                            <th>Aceptar</th>
+                                            <th>Rechazar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="usu in listDemandantesInscritos">
+                                            <td style="text-align: center;">{{usu.NombreUsuario}}</td>
+                                            <td style="text-align: center;">{{usu.Apellido1}} {{usu.Apellido2}}</td>
+                                            <td style="text-align: center;">{{usu.Telefono}}</td>
+                                            <td style="text-align: center;">{{usu.Nombre}}</td>
+                                            <td style="text-align: center;">{{usu.ExperienciaLAboral}}</td>
+                                            <td style="text-align: center;">
+                                                <a href="{{usu.CV}}" download="CV">
+                                                    <button type="button" class="btn btn-primary btn-sm" ng-click="verOferta(oferta)"> <span class="glyphicon glyphicon-file"></span></button>
+                                                </a>
+                                            </td>
+                                            <td style="text-align: center;"><button type="button" class="btn btn-primary btn-sm" ng-click="cambiarEstado(usu, 1)"> <span class="glyphicon glyphicon-ok"></span></button></td>
+                                            <td style="text-align: center;"><button type="button" class="btn btn-primary btn-sm" ng-click="cambiarEstado(usu, 2)"> <span class="glyphicon glyphicon-remove"></span></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN VER OFERTA -->
+            </div>
+        </div>
+        <!-- MODAL AÑADIR OFERTAS -->
+        <!-- Modal  -->
+        <div class="modal fade" id="modalPage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 18px;">Añadir Oferta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group plus">
+                                    <b>Título:</b><br />
+                                    <input type="text" ng-model="ofer.Titulo" class="form-control nOferta" name="titulo" id="titulo" required>
+                                </div>
+
+                                <div class="form-group plus">
+                                    <b>Fecha Fin:</b> <br />
+                                    <input type="date" ng-model="ofer.FechaFin" class="form-control nOferta" name="fechafin" id="fechafin" />
+                                </div>
+
+                                <div class="form-group plus">
+                                    <b>Observaciones:</b><br />
+                                    <input type="text" ng-model="ofer.Observaciones" class="form-control nOferta" name="observ" id="observ" required />
+                                </div>
+
+                                <div class="form-group plus">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <b>Nº vacantes:</b><br />
+                                            <input type="number" ng-model="ofer.NumeroVacantes" class="form-control nOferta medio" name="vacantes" id="vacantes" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <b>Sueldo:</b><br />
+                                            <input type="number" ng-model="ofer.Sueldo" class="form-control nOferta medio" name="precio" id="precio" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group plus">
+                                    <b>Descripción:</b><br />
+                                    <textarea class="form-control tarea" rows="1" ng-model="ofer.Descripcion" name="descrip" id="descrip" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer form-group">
+                        <button type="button" class="btn btn-danger btn-sm add" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" ng-click="crearOferta()">Crear oferta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* Fin Modal Añadir ofertas*@   
+    </div>
+</div>
+<br>
+<br>

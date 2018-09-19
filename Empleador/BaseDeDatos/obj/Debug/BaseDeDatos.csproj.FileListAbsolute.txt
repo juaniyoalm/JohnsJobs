@@ -1,0 +1,7 @@
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\bin\Debug\BaseDeDatos.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\bin\Debug\BaseDeDatos.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\bin\Debug\Core.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\bin\Debug\GestorBD.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\bin\Debug\Core.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\obj\Debug\BaseDeDatos.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\BaseDeDatos\obj\Debug\BaseDeDatos.pdb

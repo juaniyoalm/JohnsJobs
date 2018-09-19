@@ -1,0 +1,83 @@
+﻿
+<!-- Scripts-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.0/angular-locale_es-es.min.js"></script>
+
+
+<script src="~/Scripts propios/demandanteController.js"></script>
+
+<div ng-app="app">
+    <div ng-controller="DemandanteController" data-ng-init="cargarNiveles()" class="demo" style="width:auto">
+        <form id="myForm" method="post">
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-lg-6">
+                    <div class="titulo">
+                        <br><br>
+                        <h4>Esta es la <b>primera vez que accedes</b>, por favor rellena los datos siguientes para registrarte como nuevo empleador.</h4><br><br>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <b>Teléfono</b> <br />
+                        <input type="text" ng-model="dem.Telefono" class="form-control" name="telefono" id="telefono" />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Email</b><br />
+                        <input type="email" ng-model="dem.Email" class="form-control" name="email" id="email" />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Edad:</b><br />
+                        <input type="number" ng-model="dem.Edad" class="form-control" name="edad" id="edad" ng-model="nombreEmpresa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <b>Perfil Linkedin:</b><br />
+                        <input type="text" ng-model="dem.PerfilLinkedin" class="form-control" name="linkedin" id="linkedin" required />
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-4">
+
+                    <div class="form-group">
+                        <b>Foto de perfil</b><br />
+                        <input type="file" fileread="dem.ImagenB64" class="form-control" name="fotoPerfil" id="fotoPerfil" />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Nivel de estudios:</b><br />
+                        <select class="form-control" ng-model="dem.NivelEstudios" ng-options="estudios.NivelEstudios as estudios.Nombre for estudios in nivelesEstudios" required></select>
+                    </div>
+
+                    <div class="form-group">
+                        <b>Experiencia laboral:</b><br />
+                        <input type="text" ng-model="dem.ExperienciaLaboral" class="form-control" name="nestudios" id="nestudios" required />
+                    </div>
+
+
+                    <div class="form-group">
+                        <br /><br /><br />
+                        <input type="submit" class="btn btn-block btn-success" value=" Registrar empleador" id="btn-submit" ng-click="guardarDatosDemandante()">
+                        <br /><br /><br />
+                    </div>
+
+                </div>
+
+                <div class="col-sm-2"></div>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.dll.config
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\obj\Debug\Core.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\obj\Debug\Core.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.dll.CodeAnalysisLog.xml
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.dll.lastcodeanalysissucceeded
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.dll.config
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\AppBase\Core\bin\Debug\Core.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\AppBase\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\AppBase\Core\obj\Debug\Core.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\AppBase\Core\obj\Debug\Core.pdb

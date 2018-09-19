@@ -1,0 +1,85 @@
+﻿
+@model Core.Empleador.Empleador
+
+<!-- Scripts-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.0/angular-locale_es-es.min.js"></script>
+
+
+<script src="~/Scripts propios/empleadorController.js"></script>
+
+<div ng-app="app">
+    <div ng-controller="EmpleadorController" data-ng-init="cargarIndustrias()" class="demo" style="width:auto">
+        <form id="myForm" method="post">
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-lg-6">
+                    <div class="titulo">
+                        <br><br>
+                        <h4>Esta es la <b>primera vez que accedes</b>, por favor rellena los datos siguientes para registrarte como nuevo empleador.</h4><br><br>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <b>Empresa:</b><br />
+                        <input type="text" ng-model="emp.NombreEmpresa" class="form-control" name="nombreEmpresa" id="nombreEmpresa" ng-model="nombreEmpresa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <b>Dirección:</b><br />
+                        <input type="text" ng-model="emp.Direccion" class="form-control" name="direccion" id="direccion" required />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Teléfono</b> <i>(opcional):</i><br />
+                        <input type="text" ng-model="emp.Telefono" class="form-control" name="telefono" id="telefono" />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Email</b> <i><small>(opcional):</small></i><br />
+                        <input type="email" ng-model="emp.Email" class="form-control" name="email" id="email" />
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-4">
+
+                    <div class="form-group">
+                        <b>Logo de la empresa</b> <i>(opcional):</i><br />
+                        <input type="file" fileread="emp.ImagenB64"  class="form-control" name="logoEmpresa" id="logoEmpresa" />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Número de empleados:</b><br />
+                        <input type="number" ng-model="emp.NumeroEmpleados" class="form-control" name="numeroEmpleados" id="numeroEmpleados" required />
+                    </div>
+
+                    <div class="form-group">
+                        <b>Tipo de industria:</b><br />
+                        <select class="form-control" ng-model="emp.TipoIndustria" ng-options="industria.TipoIndustria as industria.Nombre for industria in industrias" required></select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <br /><br /><br />
+                        <input type="submit" class="btn btn-block btn-success" value=" Registrar empleador" id="btn-submit" ng-click="guardarDatosEmpleador()">
+                        <br /><br /><br />
+                    </div>
+
+                </div>
+
+                <div class="col-sm-2"></div>
+
+            </div>
+        </form>
+    </div>
+</div>

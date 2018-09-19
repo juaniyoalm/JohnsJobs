@@ -1,0 +1,10 @@
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Negocio.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\BaseDeDatos.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Core.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\GestorBD.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\BaseDeDatos.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Core.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\obj\Debug\Negocio.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Empleador\Negocio\obj\Debug\Negocio.pdb

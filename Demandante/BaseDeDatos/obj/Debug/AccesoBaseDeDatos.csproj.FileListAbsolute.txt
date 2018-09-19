@@ -1,0 +1,10 @@
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\obj\Debug\AccesoBaseDeDatos.csprojResolveAssemblyReference.cache
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\AccesoBaseDeDatos.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\AccesoBaseDeDatos.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\BaseDeDatos.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\Core.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\GestorBD.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\BaseDeDatos.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\bin\Debug\Core.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\obj\Debug\AccesoBaseDeDatos.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Demandante\BaseDeDatos\obj\Debug\AccesoBaseDeDatos.pdb

@@ -1,0 +1,90 @@
+﻿
+<!-- Scripts-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.0/angular-locale_es-es.min.js"></script>
+
+<script src="~/Scripts propios/registroController.js"></script>
+
+<div ng-app="app">
+    <div class="titulo" style="text-align: center">
+        <br>
+        <h3>Registro de usuario:</h3>
+        <h5>Rellena los campos siguientes para registrar un nuevo usuario.</h5><br>
+    </div>
+
+
+    <div ng-controller="RegistroController" data-ng-init="init()" class="demo" style="width:auto">
+        <form id="myForm" method="post">
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+
+                        <div class="form-group">
+                            <b>Usuario:</b><br />
+                            <input type="text" ng-model="user.User" class="form-control" name="user" id="user" ng-model="user" required>
+                            <!--<span ng-show="">Es necesario introducir un usuario.</span>
+
+                            <span style="color:red" ng-show="myForm.user.$touched">Username is required.</span>-->
+                        </div>
+
+                        <div class="form-group">
+                            <b>Contraseña:</b><br />
+                            <input type="password" ng-model="user.Password" class="form-control" name="password" id="password" />
+                        </div>
+
+                        <div class="form-group">
+                            <b>Nombre:</b><br />
+                            <input type="text" ng-model="user.Nombre" class="form-control" name="nombre" id="nombre" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-3">
+
+                        <div class="form-group">
+                            <b>Primer apellido:</b><br />
+                            <input type="text" ng-model="user.Apellido1" class="form-control" name="apellido1" id="apellido1" />
+                        </div>
+
+                        <div class="form-group">
+                            <b>Segundo apellido:</b><br />
+                            <input type="text" ng-model="user.Apellido2" class="form-control" name="apellido2" id="apellido2" />
+                        </div>
+
+                        <div class="form-group">
+                            <b>Elige el tipo de usuario:</b><br />
+                            <select class="form-control" ng-model="user.TipoUsuario">
+                                <option value=0>Empleador</option>
+                                <option value=1>Demandante</option>
+                            </select><br /><br />
+                        </div>
+
+                        <div>
+                            <input type="submit" class="btn btn-block btn-success" value=" Registrar usuario" id="btn-submit" ng-click="validarDatos()">
+                            <br /><br /><br />
+                        </div>
+
+                    </div>
+                <div class="col-sm-3">
+
+
+                    @*<form ng-app="myApp" ng-controller="validateCtrl"name="userForm" novalidate>
+
+                        <p>
+                            Username:<br>
+                            <input type="text" name="user2" ng-model="user2" required ><br />
+                            <span style="color:red" ng-if="!user2">Username is required.</span>
+                            <span ng-show="userForm.user2.$error.required">Username is required.</span></span>
+                            <span ng-show="userForm.user2.$error.required">El campo es obligatorio.</span>
+                        </p>
+
+                    </form>*@
+
+
+                </div>
+             </div>
+        </form>
+    </div>

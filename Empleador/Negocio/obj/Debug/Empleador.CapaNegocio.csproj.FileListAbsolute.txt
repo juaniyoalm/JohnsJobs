@@ -1,0 +1,11 @@
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Empleador.CapaNegocio.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Empleador.CapaNegocio.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\AccesoBaseDeDatos.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\BaseDeDatos.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Core.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\AccesoBaseDeDatos.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\BaseDeDatos.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\bin\Debug\Core.pdb
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\obj\Debug\Empleador.CapaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\obj\Debug\Empleador.CapaNegocio.dll
+C:\Users\Juan\Documents\Visual Studio 2013\Projects\Empleador\Negocio\obj\Debug\Empleador.CapaNegocio.pdb

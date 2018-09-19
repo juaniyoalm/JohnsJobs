@@ -1,0 +1,4 @@
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Demandante\Negocio\bin\Debug\Negocio.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Demandante\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Demandante\Negocio\obj\Debug\Negocio.dll
+C:\Users\Aitor\Documents\Visual Studio 2013\Projects\Demandante\Negocio\obj\Debug\Negocio.pdb

@@ -1,0 +1,195 @@
+﻿@model Core.Login.LoginModels
+
+
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+-->
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+
+
+<script src="~/Scripts propios/loginController.js"></script>
+
+<div ng-app="app">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <br>
+            <h3>Inicio de sesión:</h3><br>
+            <div ng-controller="LoginController" data-ng-init="init()" class="demo" style="width:auto">
+                <form id="userForm" method="post" name="userForm" ng-show="!signUp.submitted" ng-submit="userForm.$valid">
+
+                    <!--
+                    <md-content layout-padding="">
+                        <form name="userForm">
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm="">
+                                    <label>Email</label>
+                                    <input name="email" ng-model="user.email" required="" minlength="10" maxlength="100">
+                                    <div ng-messages="userForm.email.$error" ng-hide="showHints">
+                                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+
+                                <div flex="5" hide-xs="" hide-sm="">
+                                   
+                                </div>
+
+                                <md-input-container class="md-block" flex-gt-sm="">
+                                    <label>Phone Number</label>
+                                    <input name="phone" ng-model="user.phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/">
+                                    <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+                                        <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+                        </form>
+                    </md-content>
+        -->
+
+                    <div class="form-group">
+                        <b>Usuario:</b><br />
+                        <input type="text" ng-model="user.User" class="form-control" name="users" id="user" />
+                        <span class="text-danger" ng-show="userForm.users.$error.required && (userForm.users.$dirty && userForm.users.$touched)"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <b>Contraseña:</b><br />
+                        <input type="password" ng-model="user.Password" class="form-control" name="password" id="password" /> <br />
+                        <input type="submit" class="btn btn-info" value=" Acceder" id="btn-submit" ng-click="validarDatos()">
+                    </div>
+
+                    <div>
+                        <br /><br /><br />
+                        <input type="button" class="btn btn-primary btn-block" value="Registrarse" id="btn-registro" onclick="location.href='/Registro/Index';" />
+                        <br /><br />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+    
+    </div>
+    @*<div ng-controller="LoginController" data-ng-init="init()" class="demo" style="width:auto">
+        <form id="userForm" method="post" name="userForm" ng-show="!signUp.submitted" ng-submit="userForm.$valid">
+            <div class="form-group">
+                <b>Usuario:</b><br />
+                <input type="text" ng-model="user.User" class="form-control" name="names" id="user" model-options="{ updateOn: 'blur' }" required placeholder="Introduce tu usuario" />
+                <span class="text-danger" ng-show="userForm.names.$error.required && (userForm.names.$dirty && userForm.names.$touched)"></span>
+            </div>
+            <div class="form-group">
+                <b>Contraseña:</b><br />
+                <input type="password" ng-model="user.Password" class="form-control" name="password" id="password" model-options="{ updateOn: 'blur' }" required placeholder="Introduce tu contraseña" />
+                <span class="text-danger validar" ng-show="userForm.password.$error.required && (userForm.password.$dirty || userForm.password.$touched)"></span>
+                <br />
+                <br />
+                <input ng-disabled='!userForm.$valid' type="submit" class="btn btn-info" value=" Acceder" id="btn-submit" ng-click="validarDatos()">
+            </div>
+            <div>
+                <br /><br /><br />
+                <input type="button" class="btn btn-primary btn-block" value="Registrarse" id="btn-registro" onclick="location.href='/Registro/Index';" />
+                <br /><br />
+            </div>
+        </form>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HTML CON VALIDACION USANDO JQUERY Y AJAX-->
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="~/Scripts/loginAjax.js"></script>
+
+
+        <div>
+            <br>
+            <h3>Inicio de sesión:</h3><br>
+
+            <form id="formLogin" method="post">
+                <div class="form-group">
+                    <b>Usuario:</b><br />
+                    <input type="text" class="form-control" name="user" id="user"/>
+                </div>
+
+                <div class="form-group">
+                    <b>Contraseña:</b><br />
+                    <input type="password" class="form-control" name="password" id="password" /> <br />
+                    <input type="submit" class="btn btn-info" value=" Acceder" id="btn-submit" onclick="validarDatos()">
+                </div>
+            </form>
+        </div>*@
+
+
+
+
+
+
+<!-- HTML CON RAZOR-->
+@*
+    @model AppBase.Models.LoginModels
+
+    @{
+        ViewBag.Title = "LoginView";
+    }
+
+
+    <div>
+        <br>
+        <h3>Inicio de sesión:</h3><br>
+
+        @using (Html.BeginForm("IniciarSesion", "Login")){
+
+        @Html.ValidationSummary()
+        <div class="form-group">
+            <p><b>Usuario:</b><br /> @Html.TextBoxFor(x => x.User, new {@class="form-control"})</p>
+            <p>@Html.ValidationMessageFor(x => x.User) </p>
+        </div>
+
+        <div class="form-group">
+            <p><b>Contraseña:</b><br /> @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @type = "password" })</p>
+            <p>@Html.ValidationMessageFor(x => x.Password)</p>
+            <input type="submit" class="btn btn-info" value=" Acceder">
+        </div>
+        }
+    </div>-->*@
+
+
+
+
+
